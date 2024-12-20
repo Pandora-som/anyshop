@@ -151,4 +151,54 @@ main {
     line-height: 36px;
     gap: 10px;
 }
+@media (max-width: 640px) {
+    .v-link {
+        text-decoration: none;
+        font-size: 20px;
+        line-height: 26px;
+        gap: 10px;
+    }
+    
+    .title {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    
+    .description {
+        font-size: 12px;
+        line-height: 17px;
+        padding-right: 10px;
+    }
+    
+    .footer {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+    }
+    
+    .pad-large {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .footer {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .title {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    .v-link {
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 20px;
+        gap: 10px;
+    }
+}
+
 </style>

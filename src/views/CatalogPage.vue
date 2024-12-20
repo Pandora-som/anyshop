@@ -377,5 +377,9 @@ main {
     line-height: 39px;
     color: #FF0082;
 }
-
+@media (max-width: 380px) {
+    .products-table {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
 </style>
