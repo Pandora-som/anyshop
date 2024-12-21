@@ -60,6 +60,11 @@ export default {
                     name: 'КАТАЛОГ',
                     img:  require('@/images/catalog.png'),
                 },
+                {
+                    path: '/basket',
+                    name: 'КОРЗИНА',
+                    img:  require('@/images/basket.png'),
+                },
             ],
             router: useRouter(),
         };
