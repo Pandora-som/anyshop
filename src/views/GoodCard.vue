@@ -377,4 +377,34 @@ main {
 .ellipse:active {
     opacity: 0.9;
 }
+@media (max-width: 820px) {
+    .product-details {
+        flex-direction: column;
+    }
+    
+    .product-details .product-img-container {
+        margin-top: 10px;
+    }
+    
+    .product-details .rating {
+        margin: 9px 19px;
+    }
+    
+    .product-details .desc-text {
+        padding: 9px 19px;
+    }
+    
+    .product-details .row.price {
+        padding: 9px 19px;
+    }
+    
+    .product-details .category {
+        padding: 9px 19px;
+    }
+    
+    .product-details .counter {
+        padding: 24px;
+        padding-bottom: 0;
+    }
+}
 </style>
