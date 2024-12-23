@@ -99,6 +99,10 @@ main {
     margin: 32px;
     flex: 1;
 }
+.v-link:hover{
+    cursor: pointer;
+    color: #d84eb6;
+}
 .row {
     display: flex;
     flex-direction: row;

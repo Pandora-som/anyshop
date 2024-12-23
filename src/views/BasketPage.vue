@@ -1,5 +1,6 @@
 <template>
     <template v-if="basket.length > 0">
+       <a @click.prevent="pageChange(page.path)" class="row v-link font-inter"><img src="../images/Back-strelka.png"></a>
         <div
             v-for="product in basket"
             :key="product.id"
@@ -98,6 +99,9 @@
 </template>
 
 <script>
+
+import { useRouter } from 'vue-router';
+
 export default {
     data() {
         return {
@@ -126,6 +130,18 @@ export default {
             ],
         };
     },
+    data_link() {
+        return {
+            views: [
+                {
+                    path: '/',
+                    name: 'catalog',
+                },
+            ],
+            router: useRouter(),
+        };
+
+    },
     
     methods: {
         changeCounter(product, event) {
@@ -151,6 +167,9 @@ export default {
             }
             
             return sum.toFixed(2);
+        },
+        pageChange(href) {
+            this.router.push(href);
         },
     },
     

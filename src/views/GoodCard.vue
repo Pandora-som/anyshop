@@ -1,5 +1,6 @@
 <template>
     <div class="product-details">
+        <a href="../views/CatalogPage.vue"><img src="../images/Back-strelka.png"></a>
         <div class="product-img-container">
             <img
                 class="product-img"
