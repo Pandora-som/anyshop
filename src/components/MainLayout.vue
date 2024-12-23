@@ -2,14 +2,23 @@
     <div class="main-layout">
         <header>
             <div class="row justify-center pad-large">
-                <div v-for="(page, ind) in views" :key="ind">
-                    <a @click.prevent="pageChange(page.path)" class="row v-link font-inter">
-                        <img :src="page.img" class="img-link">
+                <div 
+                    v-for="(page, ind) in views" 
+                    :key="ind"
+                >
+                    <a  
+                        @click.prevent="pageChange(page.path)" 
+                        class="row v-link font-inter"
+                    >
+                        <img 
+                            :src="page.img" 
+                            class="img-link"
+                        >
                         <div>{{ page.name }}</div>
                     </a>
                 </div>
             </div>
-            <template v-if="$root.currentRoute === '/'">
+            <template v-if="route.path === '/'">
                 <div class="full-width row justify-center">
                     <p class="title font-inter">&nbsp;&nbsp;&nbsp;&nbsp;Интернет магазин <b>AnyShop</b> -
                         <br>найдите то, что искали</p>
@@ -37,9 +46,18 @@
                 </p>
             </div>
             <div class="row justify-center pad-large">
-                <div v-for="(page, ind) in views" :key="ind">
-                    <a @click.prevent="pageChange(page.path)" class="row v-link font-inter">
-                        <img :src="page.img" class="img-link">
+                <div
+                    v-for="(page, ind) in views" 
+                    :key="ind"
+                >
+                    <a 
+                        @click.prevent="pageChange(page.path)" 
+                        class="row v-link font-inter"
+                    >
+                        <img 
+                            :src="page.img" 
+                            class="img-link"
+                        >
                         <div>{{ page.name }}</div>
                     </a>
                 </div>
@@ -49,7 +67,7 @@
 </template>
 
 <script>
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
 export default {
     data() {
@@ -64,9 +82,11 @@ export default {
                     path: '/basket',
                     name: 'КОРЗИНА',
                     img:  require('@/images/basket.png'),
+
                 },
             ],
             router: useRouter(),
+            route: useRoute(),
         };
     },
     
@@ -110,9 +130,12 @@ main {
 }
 .justify-center {
     justify-content: space-evenly;
+    text-align: center;
 }
 .justify-right {
-    justify-content: right;
+    justify-content: center;
+    text-align: left;
+    margin-bottom: 20px;
 }
 .justify-between {
     justify-content: space-between;

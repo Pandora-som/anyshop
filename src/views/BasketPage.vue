@@ -1,6 +1,10 @@
 <template>
+     <BackButton>
+        <div class="label-text">
+            <p>КОРЗИНА</p>
+        </div>
+    </BackButton>
     <template v-if="basket.length > 0">
-       <a @click.prevent="pageChange(page.path)" class="row v-link font-inter"><img src="../images/Back-strelka.png"></a>
         <div
             v-for="product in basket"
             :key="product.id"
@@ -99,10 +103,10 @@
 </template>
 
 <script>
-
-import { useRouter } from 'vue-router';
+import BackButton from '../components/BackButton.vue';
 
 export default {
+    components: { BackButton },
     data() {
         return {
             basket:  JSON.parse(localStorage.getItem('basket') || '[]'),
@@ -129,18 +133,6 @@ export default {
                 },
             ],
         };
-    },
-    data_link() {
-        return {
-            views: [
-                {
-                    path: '/',
-                    name: 'catalog',
-                },
-            ],
-            router: useRouter(),
-        };
-
     },
     
     methods: {
@@ -177,6 +169,17 @@ export default {
 };
 </script>
 <style>
+.label-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    line-height: 100%;
+    font-size: 30px;
+    font-family: Inter;
+    font-weight: 400;
+}
 .empty-basket {
     height: 400px;
     font-size: 60px;
